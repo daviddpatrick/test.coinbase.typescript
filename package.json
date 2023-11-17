@@ -1,0 +1,44 @@
+{
+    "name": "test.coinbase.typescript",
+    "version": "1.0.0",
+    "scripts": {
+        "lint": "npx eslint . --fix --ext .ts",
+        "webHeadless": "HEADLESS=true codeceptjs run --config codecept.conf.ts --plugins allure --steps",
+        "web": "codeceptjs run --config codecept.conf.ts --plugins allure --steps",
+        "api": "codeceptjs run --config codeceptCoinbase.conf.ts --plugins allure --steps",
+        "runCurrentWebTest": "npm run web ./tests/LoginPage_test.ts",
+        "runCoinbaseTest": "npm run api ./tests/CoinBaseApi_test.ts",
+        "runAllTests": "npm run webHeadless",
+        "codeceptjs": "codeceptjs run --steps",
+        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
+        "codeceptjs:ui": "codecept-ui --app",
+        "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+        "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+        "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples"
+    },
+    "devDependencies": {
+        "@codeceptjs/configure": "^0.10.0",
+        "@codeceptjs/examples": "^1.2.1",
+        "@codeceptjs/ui": "^0.7.0",
+        "@types/dotenv-safe": "8.1.5",
+        "@types/node": "^20.9.1",
+        "@typescript-eslint/eslint-plugin": "^6.11.0",
+        "@typescript-eslint/parser": "^6.11.0",
+        "codeceptjs": "^3.5.6",
+        "codeceptjs-assert": "0.0.5",
+        "codeceptjs-browserlogs-plugin": "1.0.4",
+        "eslint": "^8.53.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-no-floating-promise": "^1.0.2",
+        "eslint-plugin-prettier": "^5.0.1",
+        "eslint-plugin-unused-imports": "^3.0.0",
+        "playwright": "^1.39.0",
+        "prettier": "3.1.0",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
+    },
+    "dependencies": {
+        "dotenv": "^16.3.1",
+        "dotenv-safe": "^8.2.0"
+    }
+}
